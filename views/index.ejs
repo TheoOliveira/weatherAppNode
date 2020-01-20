@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weather App</title>
+    <link rel="stylesheet" type="text/css" href="/public/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+      
+  </head>
+  <body>
+    <div class="container">
+      <fieldset>
+        <form action="/" method="post">
+          <input name="cidade" type="text" class="ghost-input" placeholder="Escreva o nome da cidade" required>
+          <input type="submit" class="ghost-button" value="Saiba o Clima">
+        </form>
+    <% if(locals.weather !== null){ %>
+            <p><%= locals.weather %></p>
+        <%}%>
+        
+        <% if(locals.error !== null){ %>
+            <p><%= locals.error  %></p>
+        <% } %>
+        </fieldset>
+        
+    </div>
+  </body>
+</html>
